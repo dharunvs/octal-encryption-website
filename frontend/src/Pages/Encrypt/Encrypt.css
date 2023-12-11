@@ -1,0 +1,144 @@
+.Encrypt {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 10fr 1fr 10fr;
+  place-items: start center;
+  padding-top: 10vh;
+}
+
+/* .Encrypt .line {
+  height: 50vh;
+  width: 0.1px;
+  background-color: var(--darkBlueLight);
+  transform: translateY(5vh);
+} */
+
+.Encrypt .left {
+  width: 100%;
+}
+
+.Encrypt .left > p {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.Encrypt .left .bottom > p {
+  padding-bottom: 6px;
+}
+
+.Encrypt .left .bottom .selectedFile {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: left; */
+  width: fit-content;
+  gap: 10px;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.Encrypt .left .bottom .selectedFile .remove {
+  fill: var(--darkBlue);
+  cursor: pointer;
+  position: absolute;
+  bottom: -1px;
+  left: 105%;
+}
+
+.Encrypt .left .bottom .uploadButton {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  /* background-color: var(--darkBlue); */
+
+  border: 2px solid var(--darkBlue);
+
+  /* box-shadow: var(--darkBlueShadow);  */
+}
+
+.Encrypt .left .bottom .uploadButton > p {
+  color: var(--darkBlue);
+  transform: translateY(1.5px);
+}
+
+.Encrypt .left .bottom .uploadButton > svg {
+  fill: var(--darkBlue);
+}
+
+.Encrypt .left .bottom .uploadButton > input {
+  display: none;
+}
+.Encrypt .left .top > p {
+  padding-bottom: 6px;
+}
+.Encrypt .left .top textarea {
+  width: 100%;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  color: black;
+
+  /* border: 2px solid var(--darkBlue); */
+
+  border: none;
+  box-shadow: var(--darkBlueShadow);
+}
+
+.Encrypt .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  width: 80%;
+}
+
+.Encrypt .right h1 {
+  width: 100%;
+  text-align: left;
+  color: var(--darkBlue);
+}
+
+.Encrypt .right button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  /* background-color: var(--darkBlue); */
+
+  /* background-color: transparent;
+  box-shadow: var(--darkBlueShadow); */
+
+  background-color: transparent;
+  border: 2px solid var(--darkBlue);
+}
+
+.Encrypt .right button svg {
+  /* width: 16px;
+    height: 16px; */
+  fill: var(--darkBlue);
+}
+
+.Encrypt .right button p {
+  transform: translateY(1.4px);
+  color: var(--darkBlue);
+}

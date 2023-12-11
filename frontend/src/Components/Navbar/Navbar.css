@@ -1,0 +1,73 @@
+nav {
+  width: 100%;
+  height: var(--navHeight);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  /* border-bottom: 1px solid var(--darkBlue); */
+  box-shadow: var(--darkBlueShadow);
+}
+
+nav .logo h1 {
+  color: var(--darkBlue);
+  user-select: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+nav ul li p {
+  font-weight: 600;
+  color: var(--darkBlue);
+  user-select: none;
+}
+
+nav ul li svg {
+  fill: var(--darkBlue);
+}
+
+nav ul li .navTeam {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -10px;
+  background-color: white;
+  box-shadow: var(--darkBlueShadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav ul li .navTeam .teamMember {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 10px;
+}
+
+nav ul li .navTeam .teamMember p:nth-child(1) {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+nav ul li .navTeam .teamMember p:nth-child(2) {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
