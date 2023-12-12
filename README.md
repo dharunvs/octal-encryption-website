@@ -1,7 +1,7 @@
 ## Requirements
 
-`python3`\
-`nodejs`
+[Python3](https://www.python.org/downloads/windows/)\
+[Node.js](https://nodejs.org/en)
 
 ## Setup
 
@@ -12,9 +12,9 @@
 > `cd backend`\
 > `pip install Pillow`\
 > `npm install`\
-> `npm run dev`\
+> `npm run dev`
 
 > Open terminal #2\
 > `cd frontend`\
 > `npm install`\
-> `npm run dev`\
+> `npm run dev`
