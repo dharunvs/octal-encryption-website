@@ -5,8 +5,8 @@
 
 ## Setup
 
-`git clone https://github.com/dharunvs/octal-encryption-website.git`\
-`cd octal-encryption-website`
+`git clone https://github.com/dharunvs/octal-encryption-website.git \
+cd octal-encryption-website`
 
 > Open terminal #1\
 > `cd backend`\
