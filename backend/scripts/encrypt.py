@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw
 from main import text_to_octal
 from data import *
 from junk import addjunk
+from zip import zip_directory
 import random
 
 
@@ -74,3 +75,4 @@ def encrypt_fake(file):
 
 encrypt_fake("./tmp/input.txt")
 encrypt("./tmp/input.txt")
+zip_directory()

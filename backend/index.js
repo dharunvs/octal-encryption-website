@@ -69,7 +69,7 @@ app.post("/uploadFile", upload.single("file"), (req, res) => {
   console.log("File received:", req.file);
 
   executePython("encrypt");
-  executePython("zip");
+  // executePython("zip");
 
   res.send("File uploaded successfully");
 });
