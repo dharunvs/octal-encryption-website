@@ -8,6 +8,8 @@ function Decrypt() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+  const [decrypted, setDecrypted] = useState(false);
 
   const handleUpload = async () => {
     if (selectedFile != null) {
@@ -23,8 +25,9 @@ function Decrypt() {
           })
           .then(() => {
             setTimeout(() => {
-              handleDownload();
-            }, 5000);
+              reset();
+              setDecrypted(true);
+            }, 10000);
           });
       } catch (error) {
         console.error("Error uploading file:", error);
@@ -40,7 +43,7 @@ function Decrypt() {
           setText(res.data.output);
         })
         .then(() => {
-          reset();
+          reset2();
         });
     } catch (error) {
       console.error("Error downloading file:", error);
@@ -51,6 +54,10 @@ function Decrypt() {
     setSelectedFile(null);
     document.getElementById("uploadInput").value = "";
     setLoading(false);
+  };
+
+  const reset2 = () => {
+    setLoading2(false);
   };
 
   return (
@@ -123,7 +130,9 @@ function Decrypt() {
         ) : (
           <button
             onClick={() => {
-              setLoading(true);
+              if (selectedFile != null) {
+                setLoading(true);
+              }
               handleUpload();
             }}
           >
@@ -131,6 +140,23 @@ function Decrypt() {
             <p>Decrypt</p>
           </button>
         )}
+
+        {decrypted &&
+          (loading2 ? (
+            <Components.Loader />
+          ) : (
+            <button
+              onClick={() => {
+                setLoading2(true);
+                setTimeout(() => {
+                  handleDownload();
+                }, 3000);
+              }}
+            >
+              <Assets.icons.svg.Load />
+              <p>Load Text</p>
+            </button>
+          ))}
       </div>
     </div>
   );

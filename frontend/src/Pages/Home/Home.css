@@ -1,0 +1,55 @@
+.Home {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: calc(var(--navHeight));
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.Home .box {
+  box-shadow: var(--darkBlueShadow);
+  height: 60vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Home .box button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 2px solid var(--darkBlue);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.Home .box button:hover {
+  box-shadow: var(--darkBlueShadow2);
+}
+
+.Home .box button > p {
+  color: var(--darkBlue);
+  transform: translateY(1.5px);
+}
+
+.Home .box button > svg {
+  fill: var(--darkBlue);
+}
+
+.Home .box .content h1 {
+  color: var(--darkBlue);
+  padding-bottom: 10px;
+}
+.Home .box .content p {
+  padding-bottom: 10px;
+  text-align: justify;
+}

@@ -8,6 +8,8 @@ function Encrypt() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+  const [encrypted, setEncrypted] = useState(false);
 
   const handleUpload = async () => {
     if (selectedFile != null) {
@@ -23,7 +25,8 @@ function Encrypt() {
           })
           .then(() => {
             setTimeout(() => {
-              handleDownload();
+              reset();
+              setEncrypted(true);
             }, 5000);
           });
       } catch (error) {
@@ -37,7 +40,8 @@ function Encrypt() {
           })
           .then(() => {
             setTimeout(() => {
-              handleDownload();
+              reset();
+              setEncrypted(true);
             }, 5000);
           });
       } catch (error) {
@@ -61,7 +65,7 @@ function Encrypt() {
           link.click();
         })
         .then(() => {
-          reset();
+          reset2();
         });
     } catch (error) {
       console.error("Error downloading file:", error);
@@ -73,6 +77,10 @@ function Encrypt() {
     setText("");
     document.getElementById("uploadInput").value = "";
     setLoading(false);
+  };
+
+  const reset2 = () => {
+    setLoading2(false);
   };
 
   return (
@@ -145,7 +153,10 @@ function Encrypt() {
         ) : (
           <button
             onClick={() => {
-              setLoading(true);
+              if (selectedFile != null || text.trim() != "") {
+                setLoading(true);
+              }
+
               handleUpload();
             }}
           >
@@ -153,6 +164,22 @@ function Encrypt() {
             <p>Encrypt</p>
           </button>
         )}
+        {encrypted &&
+          (loading2 ? (
+            <Components.Loader />
+          ) : (
+            <button
+              onClick={() => {
+                setLoading2(true);
+                setTimeout(() => {
+                  handleDownload();
+                }, 3000);
+              }}
+            >
+              <Assets.icons.svg.Download />
+              <p>Download</p>
+            </button>
+          ))}
       </div>
     </div>
   );

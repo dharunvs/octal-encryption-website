@@ -4,10 +4,12 @@
 :root {
   --darkBlue: #161656;
   --darkBlueLight: #bdbddd;
-  --darkBlueShadow: 1px 1px 5px 0 rgba(22, 22, 85, 0.4);
   --grey: rgb(165, 165, 165);
   --white: white;
   --darkGrey: rgb(85, 85, 85);
+
+  --darkBlueShadow: 1px 1px 5px 0 rgba(22, 22, 85, 0.4);
+  --darkBlueShadow2: 1px 1px 8px 0 rgba(22, 22, 85, 0.5);
 
   --navHeight: 8vh;
 }

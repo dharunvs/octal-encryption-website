@@ -56,15 +56,16 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  transition: all 200ms ease-in-out;
 
   font-weight: 400;
   font-size: 1.2rem;
 
-  /* background-color: var(--darkBlue); */
-
   border: 2px solid var(--darkBlue);
+}
 
-  /* box-shadow: var(--darkBlueShadow);  */
+.Decrypt .left .bottom .uploadButton:hover {
+  box-shadow: var(--darkBlueShadow2);
 }
 
 .Decrypt .left .bottom .uploadButton > p {
@@ -119,6 +120,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+  transition: all 200ms ease-in-out;
 
   font-weight: 400;
   font-size: 1.2rem;
@@ -130,6 +132,10 @@
 
   background-color: transparent;
   border: 2px solid var(--darkBlue);
+}
+
+.Decrypt .right button:hover {
+  box-shadow: var(--darkBlueShadow2);
 }
 
 .Decrypt .right button svg {
