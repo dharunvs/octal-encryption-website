@@ -5,13 +5,15 @@
 
 ## Setup
 
-```git clone https://github.com/dharunvs/octal-encryption-website.git
+```
+git clone https://github.com/dharunvs/octal-encryption-website.git
 cd octal-encryption-website
 ```
 
 ### Backend
 
-```cd backend
+```
+cd backend
 pip install Pillow
 npm install
 npm run dev
@@ -19,7 +21,8 @@ npm run dev
 
 ### Frontend
 
-```cd frontend
+```
+cd frontend
 npm install
 npm run dev
 ```
