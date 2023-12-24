@@ -1,0 +1,11 @@
+{
+  "session1": {
+    "userProfile": {
+      "name": "Surikutty",
+      "age": 21,
+      "college": "KCG College Of Technology"
+    },
+    "sessionData": { "id": "session1", "loginTime": "12:12:32" },
+    "shoppingCart": ["cartItem1", "cartItem2", "cartItem3"]
+  }
+}
