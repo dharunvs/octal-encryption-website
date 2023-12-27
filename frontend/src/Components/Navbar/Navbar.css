@@ -5,7 +5,6 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  /* border-bottom: 1px solid var(--darkBlue); */
   box-shadow: var(--darkBlueShadow);
 }
 
@@ -45,7 +44,7 @@ nav ul li .navTeam {
   position: absolute;
   top: calc(100% + 10px);
   right: -10px;
-  background-color: white;
+  background-color: var(--white);
   box-shadow: var(--darkBlueShadow);
   padding: 20px;
   display: flex;

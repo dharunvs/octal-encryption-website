@@ -2,6 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
+  /* Default */
+  /* --darkBlue: #161656;
+  --darkBlueLight: #bdbddd;
+  --grey: rgb(165, 165, 165);
+  --white: white;
+  --darkGrey: rgb(85, 85, 85); */
+
+  /* For changes */
   --darkBlue: #161656;
   --darkBlueLight: #bdbddd;
   --grey: rgb(165, 165, 165);
@@ -27,4 +35,5 @@
 body {
   width: 100%;
   min-height: 100vh;
+  background-color: var(--white);
 }
