@@ -1,5 +1,6 @@
 from PIL import Image
 from data import *
+from aes import *
 from main import octal_to_text
 from check_encrypted import check_encrypted
 from junk import removejunk
@@ -47,9 +48,12 @@ def decrypt(key, im):
             # text += "1"
 
         text = removejunk(text)
-        print("text",text)
+        print("Octal format:",text)
         decrypted = octal_to_text(text)
-        print("decrypted",decrypted)
+        print("AES encrypted text:", decrypted)
+        aes_key = get_aes_key()
+        decrypted = aes_decrypt_text(decrypted, aes_key)
+        print("Decrypted text:",decrypted)
         
         with open("./tmp/decryptOut.txt", 'w') as file:
             file.write(decrypted)

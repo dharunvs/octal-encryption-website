@@ -11,6 +11,3 @@ def zip_directory():
                 arcname = os.path.relpath(file_path, directory_path)
                 zip_file.write(file_path, arcname)
 
-
-
-zip_directory()

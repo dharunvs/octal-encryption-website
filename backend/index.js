@@ -61,7 +61,6 @@ app.post("/uploadImage", uploadImage.single("file"), (req, res) => {
   console.log("File received:", req.file);
 
   const output = executePython("decrypt");
-
   res.send("Image uploaded successfully");
 });
 
@@ -69,8 +68,6 @@ app.post("/uploadFile", upload.single("file"), (req, res) => {
   console.log("File received:", req.file);
 
   executePython("encrypt");
-  // executePython("zip");
-
   res.send("File uploaded successfully");
 });
 
@@ -87,7 +84,6 @@ app.post("/uploadText", (req, res) => {
   });
 
   executePython("encrypt");
-  executePython("zip");
   res.send("Text uploaded successfully");
 });
 

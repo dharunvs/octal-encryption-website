@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Assets from "../../Assets";
 import "./Home.css";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="Home">
       <div className="box">
@@ -25,7 +27,11 @@ function Home() {
             laudantium labore harum.
           </p>
         </div>
-        <button>
+        <button
+          onClick={() => {
+            navigate("/encrypt");
+          }}
+        >
           <Assets.icons.svg.Lock />
           <p>Encrypt</p>
         </button>
@@ -50,7 +56,11 @@ function Home() {
             laudantium labore harum.
           </p>
         </div>
-        <button>
+        <button
+          onClick={() => {
+            navigate("/decrypt");
+          }}
+        >
           <Assets.icons.svg.Key />
           <p>Decrypt</p>
         </button>

@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw
 from main import text_to_octal
+from aes import *
 from data import *
 from junk import addjunk
 from zip import zip_directory
@@ -13,8 +14,11 @@ colors = COLORS
 def encrypt(file):
     with open(file, "r") as f:
         num = f.read()
-
+    aes_key = get_aes_key()
+    num = aes_encrypt_text(num, aes_key)
+    print("AES Encrypted text:", num)
     num = text_to_octal(num)
+    print("Octal Format:", num)
     num , _ = addjunk(num)
 
     im = Image.new('RGBA', canvas, (255, 255, 255, 255))
@@ -34,8 +38,6 @@ def encrypt(file):
     with open("key", "w") as f:
         f.write(str(len(num)))
 
-    # im.thumbnail(thumb)
-
     file = file.split(".")
     im.save(f"./out/encryptOut.png")
 
@@ -43,7 +45,8 @@ def encrypt(file):
 def encrypt_fake(file):
     with open(file, "r") as f:
         num = f.read()
-
+    aes_key = get_aes_key()
+    num = aes_encrypt_text(num, aes_key)
     num = text_to_octal(num)
     num , _ = addjunk(num, True)
 
@@ -76,3 +79,6 @@ def encrypt_fake(file):
 encrypt_fake("./tmp/input.txt")
 encrypt("./tmp/input.txt")
 zip_directory()
+
+
+# encrypt("../tmp/input.txt")
