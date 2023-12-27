@@ -1,7 +1,6 @@
 from PIL import Image
 from data import CANVAS_SIZE
 
-
 def create_points(side_length):
     points = []
     for x in range(side_length):

@@ -6,7 +6,6 @@ from junk import addjunk
 from zip import zip_directory
 import random
 
-
 canvas = (CANVAS_SIZE, CANVAS_SIZE)
 box_size = BOX_SIZE
 colors = COLORS
@@ -41,7 +40,6 @@ def encrypt(file):
     file = file.split(".")
     im.save(f"./out/encryptOut.png")
 
-
 def encrypt_fake(file):
     with open(file, "r") as f:
         num = f.read()
@@ -53,13 +51,11 @@ def encrypt_fake(file):
     im = Image.new('RGBA', canvas, (255, 255, 255, 255))
     draw = ImageDraw.Draw(im)
 
-
     for j in range(1, 11):
         x=y=a=0
         num = list(num)
         random.shuffle(num)
         num = "".join(num)
-        # print(num)
         for i in num:
             draw.rectangle([(x, y), (x+box_size, y+box_size)], fill=colors[i])
             x+=box_size
@@ -72,7 +68,6 @@ def encrypt_fake(file):
         with open("key", "w") as f:
             f.write(str(len(num)))
 
-
         fn= file.split(".")
         im.save(f"./out/encryptFakeOut/encryptFakeOut{j}.png")
 
@@ -80,5 +75,5 @@ encrypt_fake("./tmp/input.txt")
 encrypt("./tmp/input.txt")
 zip_directory()
 
-
+# -- Testing --
 # encrypt("../tmp/input.txt")

@@ -35,10 +35,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Set up multer storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "tmp/"); // specify the upload directory
+    cb(null, "tmp/");
   },
   filename: function (req, file, cb) {
     cb(null, "input.txt");
@@ -47,7 +46,7 @@ const storage = multer.diskStorage({
 
 const storageImage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "tmp/"); // specify the upload directory
+    cb(null, "tmp/");
   },
   filename: function (req, file, cb) {
     cb(null, "input.png");
@@ -60,7 +59,7 @@ const uploadImage = multer({ storage: storageImage });
 app.post("/uploadImage", uploadImage.single("file"), (req, res) => {
   console.log("File received:", req.file);
 
-  const output = executePython("decrypt");
+  executePython("decrypt");
   res.send("Image uploaded successfully");
 });
 
@@ -119,14 +118,14 @@ function executePython(filename) {
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error executing Python script->\n${error.message}`);
+      console.error(`\nError executing Python script ->\n${error.message}`);
       return;
     }
     if (stderr) {
-      console.error(`Python script stderr->\n${stderr}`);
+      console.error(`\nPython script stderr ->\n${stderr}`);
       return;
     }
-    console.log(`Python script output->\n${stdout}`);
+    console.log(`\nPython script output ->\n${stdout}`);
 
     return stdout;
   });

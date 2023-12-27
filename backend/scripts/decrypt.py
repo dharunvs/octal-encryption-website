@@ -40,12 +40,10 @@ def decrypt(key, im):
                     break
             colors_li.append(color_name)
 
-
         text = ""
 
         for i in colors_li:
             text += NUMS[i]
-            # text += "1"
 
         text = removejunk(text)
         print("Octal format:",text)
@@ -61,6 +59,5 @@ def decrypt(key, im):
     else:
         with open("./tmp/decryptOut.txt", 'w') as file:
             file.write("Fake image")
-    
 
 decrypt("key", "./tmp/input.png")
